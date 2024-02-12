@@ -15,6 +15,7 @@ class Item:
         self.product_name = product_name
         self.price = price
         self.amount = amount
+        Item.all.append(self)
 
     def calculate_total_price(self) -> float:
         """
