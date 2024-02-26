@@ -1,6 +1,5 @@
 import csv
 import os
-from math import floor
 
 
 class Item:
@@ -17,10 +16,16 @@ class Item:
             :param price: цена за единицу товара
             :param amount: количество товара в магазине
         """
-        self.__name = name  # Сделали атрибут name приватным
+        self.name = name  # Сделали атрибут name приватным
         self.price = price
         self.amount = amount
         Item.all.append(self)
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.amount})"
+
+    def __str__(self):
+        return f'{self.name}'
 
     @property
     def name(self):

@@ -61,3 +61,13 @@ def test_string_to_number():
     assert Item.string_to_number('4') == 4
     with pytest.raises(ValueError):
         Item.string_to_number('abc')
+
+
+def test__repr__():
+    item = Item('Телефон', 189990, 2)
+    assert repr(item) == "Item('Телефон', 189990, 2)"
+
+
+def test__str__():
+    item = Item('Телефон', 189990, 2)
+    assert str(item) == 'Телефон'
